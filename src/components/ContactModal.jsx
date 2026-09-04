@@ -23,13 +23,46 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSentMessage(true);
-    setTimeout(() => {
-      setSentMessage(false);
-      onClose();
-    }, 2500);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${personal.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `تواصل جديد عبر السيرة الذاتية من ${formData.name}`,
+          Name: formData.name,
+          Email: formData.email,
+          Message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setSentMessage(true);
+        setTimeout(() => {
+          setSentMessage(false);
+          setFormData({ name: '', email: '', message: '' });
+          onClose();
+        }, 3500);
+      } else {
+        // Fallback to mailto link
+        window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent("تواصل جديد عبر السيرة الذاتية - " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nمن: " + formData.name + " (" + formData.email + ")")}`;
+        setSentMessage(true);
+      }
+    } catch (err) {
+      // Fallback
+      window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent("تواصل جديد عبر السيرة الذاتية - " + formData.name)}&body=${encodeURIComponent(formData.message + "\n\nمن: " + formData.name + " (" + formData.email + ")")}`;
+      setSentMessage(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,7 +76,7 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
           {isAr ? <>تواصل مع <span className="gradient-text">{personal.name}</span></> : (isTr ? <><span className="gradient-text">{personal.name}</span> ile İletişime Geçin</> : <>Get in Touch with <span className="gradient-text">{personal.name}</span></>)}
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '24px' }}>
-          {isAr ? 'يسعدني التواصل لمناقشة فرص العمل، وتطوير الويب وأنظمة الـ ERP.' : (isTr ? 'Yazılım ve ERP projeleri için benimle iletişime geçebilirsiniz.' : 'I am open to discussions regarding Full Stack software engineering and ERP business opportunities.')}
+          {isAr ? 'سيصلك رد مباشر على بريدك الإلكتروني عند إرسال هذه الرسالة.' : (isTr ? 'Mesajınız doğrudan e-posta adresime iletilecektir.' : 'Your message will be sent directly to my email address.')}
         </p>
 
         {/* Quick Action Copy Buttons */}
@@ -77,8 +110,8 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
         {sentMessage ? (
           <div style={{ textAlign: 'center', padding: '24px', background: 'rgba(16, 185, 129, 0.1)', borderRadius: 'var(--radius-sm)', border: '1px solid #10b981' }}>
             <Check size={32} color="#10b981" style={{ margin: '0 auto 10px auto' }} />
-            <h4 style={{ color: '#10b981', fontWeight: '700' }}>{isAr ? 'تم إرسال رسالتك بنجاح!' : (isTr ? 'Mesajınız başarıyla gönderildi!' : 'Your message has been sent successfully!')}</h4>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '4px' }}>{isAr ? 'شكراً لتواصلك، سأرد عليك في أقرب وقت.' : (isTr ? 'İletişime geçtiğiniz için teşekkürler, en kısa sürede dönüş yapacağım.' : 'Thank you for reaching out, I will get back to you soon.')}</p>
+            <h4 style={{ color: '#10b981', fontWeight: '700' }}>{isAr ? 'تم إرسال رسالتك إلى البريد بنجاح!' : (isTr ? 'Mesajınız e-postama başarıyla gönderildi!' : 'Your message has been sent to email!')}</h4>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '4px' }}>{isAr ? `سيصل إشعار بالرسالة مباشرة إلى ${personal.email}` : (isTr ? `${personal.email} adresine iletildi.` : `Notification sent to ${personal.email}`)}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -95,7 +128,7 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
             <div>
               <input 
                 type="email" 
-                placeholder={isAr ? 'البريد الإلكتروني / Email' : (isTr ? 'E-posta Adresiniz' : 'Your Email Address')} 
+                placeholder={isAr ? 'البريد الإلكتروني للراسل / Email' : (isTr ? 'E-posta Adresiniz' : 'Your Email Address')} 
                 required 
                 value={formData.email} 
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -113,9 +146,9 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ width: '100%', justifyContent: 'center', opacity: isSubmitting ? 0.7 : 1 }}>
               <Send size={16} />
-              <span>{isAr ? 'إرسال الرسالة' : (isTr ? 'Mesajı Gönder' : 'Send Message')}</span>
+              <span>{isSubmitting ? (isAr ? 'جاري الإرسال...' : (isTr ? 'Gönderiliyor...' : 'Sending...')) : (isAr ? 'إرسال إلى الإيميل' : (isTr ? 'E-postaya Gönder' : 'Send to Email'))}</span>
             </button>
           </form>
         )}
