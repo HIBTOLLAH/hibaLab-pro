@@ -13,7 +13,7 @@ export function Navbar({ lang, setLang, navData, onOpenContact }) {
           <div className="badge brand-badge">
             <Code size={16} />
           </div>
-          <span className="brand-title">{lang === 'ar' ? 'هبة الله الحسن' : 'Hibtollah Alhasan'}</span>
+          <span className="brand-title">hibtollahLab</span>
         </div>
 
         <ul className="nav-links">

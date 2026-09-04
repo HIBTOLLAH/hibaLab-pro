@@ -76,8 +76,8 @@ export function Hero({ personal, onOpenContact, navData, lang }) {
 
           {/* Quick Metrics (Hidden in Print Mode to save space for Education & Projects) */}
           <div className="hero-metrics-grid no-print" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '18px', marginTop: '14px' }}>
-            <div className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px', borderLeft: isAr ? '1px solid var(--border-color)' : '4px solid #1e3a8a', borderRight: isAr ? '4px solid #1e3a8a' : '1px solid var(--border-color)' }}>
-              <div style={{ width: '46px', height: '46px', borderRadius: '8px', background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#1e3a8a' }}>
+            <div className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px', borderLeft: isAr ? '1px solid var(--border-color)' : '4px solid #2563eb', borderRight: isAr ? '4px solid #2563eb' : '1px solid var(--border-color)' }}>
+              <div style={{ width: '46px', height: '46px', borderRadius: '10px', background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0284c7' }}>
                 <Globe size={24} />
               </div>
               <div>
@@ -90,8 +90,8 @@ export function Hero({ personal, onOpenContact, navData, lang }) {
               </div>
             </div>
 
-            <div className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px', borderLeft: isAr ? '1px solid var(--border-color)' : '4px solid #1e3a8a', borderRight: isAr ? '4px solid #1e3a8a' : '1px solid var(--border-color)' }}>
-              <div style={{ width: '46px', height: '46px', borderRadius: '8px', background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#1e3a8a' }}>
+            <div className="glass-card" style={{ padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '16px', borderLeft: isAr ? '1px solid var(--border-color)' : '4px solid #0d9488', borderRight: isAr ? '4px solid #0d9488' : '1px solid var(--border-color)' }}>
+              <div style={{ width: '46px', height: '46px', borderRadius: '10px', background: 'linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0f766e' }}>
                 <Cpu size={24} />
               </div>
               <div>
