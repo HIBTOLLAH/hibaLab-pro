@@ -6,6 +6,7 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [sentMessage, setSentMessage] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isAr = lang === 'ar';
   const isTr = lang === 'tr';
@@ -22,8 +23,6 @@ export function ContactModal({ isOpen, onClose, personal, lang }) {
       setTimeout(() => setCopiedPhone(false), 2000);
     }
   };
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
