@@ -1,5 +1,5 @@
 import React from 'react';
-import { FolderGit2, ExternalLink, Boxes, Globe, ShoppingBag, Sparkles, Layers } from 'lucide-react';
+import { FolderGit2, ExternalLink, Boxes, Globe, ShoppingBag, Layers, Eye } from 'lucide-react';
 
 export function Projects({ projects, sections, lang }) {
   const isAr = lang === 'ar';
@@ -8,6 +8,7 @@ export function Projects({ projects, sections, lang }) {
   const getBadgeIcon = (badge) => {
     if (badge.includes('ERP')) return <Boxes size={14} />;
     if (badge.includes('Commerce') || badge.includes('Ticaret')) return <ShoppingBag size={14} />;
+    if (badge.includes('Web') || badge.includes('Corporate') || badge.includes('موقع')) return <Globe size={14} />;
     return <Layers size={14} />;
   };
 
@@ -23,39 +24,64 @@ export function Projects({ projects, sections, lang }) {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
         {projects.map((proj) => (
-          <div 
-            key={proj.id} 
-            className="glass-card" 
-            style={{ 
-              padding: '28px', 
-              display: 'flex', 
-              flexDirection: 'column', 
-              justify: 'space-between',
-              position: 'relative'
+          <div
+            key={proj.id}
+            className="glass-card project-card"
+            style={{
+              padding: '0',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              overflow: 'hidden'
             }}
           >
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
-                <div className="badge" style={{ fontSize: '0.95rem', padding: '6px 14px' }}>
-                  {getBadgeIcon(proj.badge)}
-                  <span>{proj.badge}</span>
+            {/* Project Image Header */}
+            {proj.image && (
+              <div className="project-image-wrapper">
+                <img 
+                  src={proj.image} 
+                  alt={proj.title} 
+                  className="project-image"
+                  loading="lazy"
+                />
+                <div className="project-image-overlay">
+                  <div className="badge brand-badge" style={{ fontSize: '0.85rem' }}>
+                    {getBadgeIcon(proj.badge)}
+                    <span>{proj.badge}</span>
+                  </div>
                 </div>
-                <span style={{ fontSize: '1rem', color: 'var(--accent-primary)', fontWeight: '700' }}>
+              </div>
+            )}
+
+            <div style={{ padding: '24px 24px 18px 24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', flexWrap: 'wrap', gap: '8px' }}>
+                {!proj.image && (
+                  <div className="badge" style={{ fontSize: '0.88rem', padding: '5px 12px' }}>
+                    {getBadgeIcon(proj.badge)}
+                    <span>{proj.badge}</span>
+                  </div>
+                )}
+                <span style={{ fontSize: '0.92rem', color: 'var(--accent-primary)', fontWeight: '700' }}>
                   {proj.category}
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '12px', color: 'var(--text-main)' }}>
+              <h3 style={{ fontSize: '1.38rem', fontWeight: '800', marginBottom: proj.subtitle ? '4px' : '10px', color: 'var(--text-main)' }}>
                 {proj.title}
               </h3>
+              {proj.subtitle && (
+                <div style={{ fontSize: '0.9rem', color: 'var(--accent-primary)', fontWeight: '700', marginBottom: '12px' }}>
+                  {proj.subtitle}
+                </div>
+              )}
 
-              <p style={{ color: 'var(--text-main)', fontSize: '1.15rem', lineHeight: '1.75', marginBottom: '20px', fontWeight: '500' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.02rem', lineHeight: '1.7', marginBottom: '16px', fontWeight: '500' }}>
                 {proj.description}
               </p>
             </div>
 
-            <div>
-              <div className="tech-tags" style={{ marginTop: '0', marginBottom: proj.website ? '16px' : '0' }}>
+            <div style={{ padding: '0 24px 22px 24px' }}>
+              <div className="tech-tags" style={{ marginTop: '0', marginBottom: proj.website ? '14px' : '0' }}>
                 {proj.technologies.map((tech, idx) => (
                   <span key={idx} className="tech-tag">
                     {tech}
@@ -64,15 +90,15 @@ export function Projects({ projects, sections, lang }) {
               </div>
 
               {proj.website && (
-                <div style={{ marginTop: '18px', paddingTop: '14px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'flex-end' }}>
-                  <a 
-                    href={proj.website} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '1.05rem', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                <div style={{ marginTop: '14px', paddingTop: '12px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'flex-end' }}>
+                  <a
+                    href={proj.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '0.98rem', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                   >
                     <span>{isAr ? 'معاينة المشروع' : (isTr ? 'Projeyi İncele' : 'View Project Website')}</span>
-                    <ExternalLink size={16} />
+                    <ExternalLink size={15} />
                   </a>
                 </div>
               )}

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Briefcase, Calendar, MapPin, Building2, ChevronRight, ChevronLeft, Sparkles, Filter, ExternalLink } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, Building2, ExternalLink, Code2, Boxes } from 'lucide-react';
 
 export function Experience({ experiences, sections, lang }) {
-  const [filter, setFilter] = useState('all');
+  // Default to domain filter ('business' for ERP & Regional Business Dev) without 'all' option
+  const [filter, setFilter] = useState('business');
   const isAr = lang === 'ar';
   const isTr = lang === 'tr';
 
   const filteredExperiences = experiences.filter(exp => {
-    if (filter === 'all') return true;
     if (filter === 'software') return exp.type === 'software';
     if (filter === 'business') return exp.type === 'business-tech';
     return true;
@@ -22,29 +22,24 @@ export function Experience({ experiences, sections, lang }) {
         <p className="section-subtitle">{sections.experienceSubtitle}</p>
       </div>
 
-      {/* Filter Tabs */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '32px', flexWrap: 'wrap' }}>
-        <button 
-          className={`btn ${filter === 'all' ? 'btn-primary' : 'btn-secondary'}`}
-          onClick={() => setFilter('all')}
-          style={{ padding: '10px 20px', fontSize: '1rem' }}
-        >
-          <Filter size={16} />
-          <span>{isAr ? 'جميع الخبرات' : (isTr ? 'Tüm Deneyimler' : 'All Experience')}</span>
-        </button>
-        <button 
-          className={`btn ${filter === 'software' ? 'btn-primary' : 'btn-secondary'}`}
-          onClick={() => setFilter('software')}
-          style={{ padding: '10px 20px', fontSize: '1rem' }}
-        >
-          <span>{isAr ? 'تطوير البرمجيات (Full Stack)' : (isTr ? 'Yazılım Geliştirme' : 'Software Development (Full Stack)')}</span>
-        </button>
-        <button 
+      {/* Domain Category Filter Tabs (Removed 'All' Option as requested) */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '32px', flexWrap: 'wrap' }}>
+        <button
           className={`btn ${filter === 'business' ? 'btn-primary' : 'btn-secondary'}`}
           onClick={() => setFilter('business')}
-          style={{ padding: '10px 20px', fontSize: '1rem' }}
+          style={{ padding: '10px 22px', fontSize: '1rem', fontWeight: '700' }}
         >
+          <Boxes size={18} />
           <span>{isAr ? 'أنظمة ERP وتطوير الأعمال' : (isTr ? 'ERP Sistemleri & İş Geliştirme' : 'ERP Systems & Business Dev')}</span>
+        </button>
+
+        <button
+          className={`btn ${filter === 'software' ? 'btn-primary' : 'btn-secondary'}`}
+          onClick={() => setFilter('software')}
+          style={{ padding: '10px 22px', fontSize: '1rem', fontWeight: '700' }}
+        >
+          <Code2 size={18} />
+          <span>{isAr ? 'تطوير البرمجيات (Full Stack)' : (isTr ? 'Yazılım Geliştirme' : 'Software Development (Full Stack)')}</span>
         </button>
       </div>
 
@@ -61,9 +56,9 @@ export function Experience({ experiences, sections, lang }) {
                 <div className="timeline-company" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <Building2 size={18} />
                   {exp.website ? (
-                    <a 
-                      href={exp.website} 
-                      target="_blank" 
+                    <a
+                      href={exp.website}
+                      target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: 'var(--accent-primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '700' }}
                     >
@@ -108,9 +103,9 @@ export function Experience({ experiences, sections, lang }) {
 
             {exp.website && (
               <div style={{ marginTop: '18px', paddingTop: '14px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'flex-end' }}>
-                <a 
-                  href={exp.website} 
-                  target="_blank" 
+                <a
+                  href={exp.website}
+                  target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '1.05rem', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                 >

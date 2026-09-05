@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { cvData } from './data/cvData';
 import { Navbar } from './components/Navbar';
+import { TechBackground } from './components/TechBackground';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { Services } from './components/Services';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Education } from './components/Education';
@@ -22,8 +24,11 @@ export default function App() {
 
   return (
     <div className="app-wrapper">
+      {/* Interactive Domain Tech Background */}
+      <TechBackground />
+
       {/* Navigation Bar */}
-      <Navbar 
+      <Navbar
         lang={lang}
         setLang={setLang}
         navData={currentData.nav}
@@ -32,32 +37,39 @@ export default function App() {
 
       {/* Main Content */}
       <main>
-        <Hero 
+        <Hero
           personal={currentData.personal}
           onOpenContact={() => setIsContactOpen(true)}
           navData={currentData.nav}
           lang={lang}
         />
 
-        <About 
+        <About
           personal={currentData.personal}
           sections={currentData.sections}
           lang={lang}
         />
 
-        <Experience 
+        <Services
+          services={currentData.services}
+          sections={currentData.sections}
+          lang={lang}
+          onOpenContact={() => setIsContactOpen(true)}
+        />
+
+        <Experience
           experiences={currentData.experience}
           sections={currentData.sections}
           lang={lang}
         />
 
-        <Projects 
+        <Projects
           projects={currentData.projects}
           sections={currentData.sections}
           lang={lang}
         />
 
-        <Education 
+        <Education
           education={currentData.education}
           sections={currentData.sections}
           lang={lang}
@@ -65,7 +77,7 @@ export default function App() {
       </main>
 
       {/* Contact Overlay Modal */}
-      <ContactModal 
+      <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
         personal={currentData.personal}

@@ -22,8 +22,8 @@ export function Education({ education, sections, lang }) {
                 <div className="badge" style={{ fontSize: '0.95rem', padding: '6px 14px' }}>
                   <Award size={15} />
                   <span>
-                    {edu.id === 'bartin' 
-                      ? (isAr ? 'مؤهل أكاديمي' : 'Academic Degree') 
+                    {edu.id === 'bartin'
+                      ? (isAr ? 'مؤهل أكاديمي' : 'Academic Degree')
                       : (isAr ? 'تدريب ميداني تخصصي' : 'Specialized Internship')}
                   </span>
                 </div>
@@ -69,10 +69,10 @@ export function Education({ education, sections, lang }) {
 
             {edu.website && (
               <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid var(--border-color)' }}>
-                <a 
-                  href={edu.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={edu.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '1.05rem', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                 >
                   <span>{isAr ? 'زيارة الموقع الرسمي' : 'Visit Official Website'}</span>

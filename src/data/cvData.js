@@ -17,6 +17,7 @@ export const cvData = {
     },
     nav: {
       about: "عنّي",
+      services: "خدماتي",
       experience: "الخبرات العملية",
       projects: "المشاريع المميزة",
       education: "التعليم والتدريب",
@@ -28,6 +29,8 @@ export const cvData = {
     sections: {
       aboutTitle: "نبذة عنّي",
       aboutSubtitle: "الدمج بين الهندسة البرمجية وتطوير الأعمال الدولية",
+      servicesTitle: "خدماتي المتميزة",
+      servicesSubtitle: "حلول برمجية وتجارية متكاملة تلبي احتياجات مؤسستك ومشروعك",
       experienceTitle: "الخبرة العملية",
       experienceSubtitle: "سجل حافل بالشركات والتجارب البرمجية والتجارية",
       projectsTitle: "المشاريع والأعمال",
@@ -83,21 +86,35 @@ export const cvData = {
     ],
     projects: [
       {
-        id: "zto-fabrika",
-        title: "ZTO Fabrika",
-        category: "نظام ERP وتتبع المصانع",
-        badge: "Enterprise ERP",
-        description: "نظام ERP متكامل لإدارة المصانع الرقمية والغذائية، يشتمل على تتبع وتوثيق خطوط الإنتاج والعمليات وإدارة المخزون والتكامل مع قواعد البيانات المعقدة.",
-        website: "https://ztofabrika.com/tr",
-        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "System Integration"]
+        id: "zamir-website",
+        title: "Zamir Teknoloji Website",
+        subtitle: "İzlenebilirlik | Gıda ERP Sistemi | Dijital Fabrika | Dijital Dönüşüm",
+        category: "تصميم موقع لشركة Zamir Teknoloji",
+        badge: "Corporate Web",
+        image: "/projects/zamir-website.jpg",
+        description: "تصميم وتطوير الموقع الإلكتروني الرسمي لشركة Zamir Teknoloji (ZTO Fabrika)، لعرض حلول التحول الرقمي، أنظمة تتبع خطوط الإنتاج، والخدمات التكنولوجية المتقدمة للمصانع.",
+        website: "https://ztofabrika.com/tr/",
+        technologies: ["React.js", "HTML5 & CSS3", "Responsive UI/UX", "Web Design", "JavaScript"]
       },
       {
-        id: "uzmanagel",
-        title: "Uzmanagel Platform",
+        id: "zto-fabrika-erp",
+        title: "ZTO Fabrika ERP System",
+        subtitle: "Fabrika Yönetim ve İzlenebilirlik Sistemi",
+        category: "نظام ERP لإدارة المصانع والتتبع",
+        badge: "Enterprise ERP",
+        image: "/projects/zto-erp.jpg",
+        description: "نظام ERP متكامل لإدارة المصانع الرقمية والغذائية والتحول الرقمي، يشتمل على تتبع وتوثيق خطوط الإنتاج والعمليات وإدارة المخزون والتكامل مع قواعد البيانات المعقدة.",
+        website: "https://zto-factory.com/",
+        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "Digital Transformation", "Industry 4.0"]
+      },
+      {
+        id: "khabiir",
+        title: "منصة خبير (Khabiir)",
         category: "منصة خدمات واستشارات",
         badge: "Web Platform",
+        image: "/projects/khabiir.jpg",
         description: "منصة تفاعلية تتيح التواصل وحجز الاستشارات مع الخبراء والمتخصصين عبر واجهات ويب حديثة وسريعة ولوحات تحكم لإدارة المواعيد والخدمات.",
-        website: "",
+        website: "https://khabiir.com/",
         technologies: ["React.js", "Node.js", "REST APIs", "Full Stack", "JavaScript"]
       },
       {
@@ -105,6 +122,7 @@ export const cvData = {
         title: "Brand",
         category: "متجر إلكتروني متكامل",
         badge: "E-Commerce",
+        image: "/projects/brand.jpg",
         description: "منصة متجر إلكتروني حديثة متكاملة للعلامة التجارية Brand، تشتمل على عرض المنتجات، إدارة السلة والطلبات، ولوحة إدارة وتحكم بالمنتجات والمدفوعات.",
         website: "",
         technologies: ["React.js", "Node.js", "Firebase", "E-Commerce UI", "Responsive Design"]
@@ -177,6 +195,92 @@ export const cvData = {
     languages: [
       { name: "العربية", level: "اللغة الأم", stars: 5, note: "Native Language" },
       { name: "التركية", level: "طلاقة احترافية", stars: 5, note: "Professional Fluent" }
+    ],
+    services: [
+      {
+        id: "fullstack-dev",
+        title: "تطوير تطبيقات الويب المتكاملة (Full Stack)",
+        subtitle: "React.js, Node.js & REST APIs",
+        badge: "Web Engineering",
+        icon: "Code2",
+        description: "تصميم وبناء تطبيقات ويب حديثة، متجاوبة مع كافة الشاشات، وسريعة الأداء. تشمل بناء واجهات مستخدم جذابة بـ React.js وتطوير خدمات خادم آمنة وقابلة للتوسع بـ Node.js و REST APIs.",
+        features: [
+          "تطوير واجهات تفاعلية سريعة ومخصصة (React.js)",
+          "بناء وتكامل واجهات برمجة التطبيقات (Node.js & REST APIs)",
+          "ربط قواعد البيانات والخدمات السحابية (Firebase / SQL)",
+          "تصميم متجاوب ومتوافق مع جميع الأجهزة (Responsive UI/UX)"
+        ]
+      },
+      {
+        id: "erp-net",
+        title: "تطوير وتخصيص أنظمة ERP و .NET",
+        subtitle: "Enterprise Resource Planning",
+        badge: "Enterprise Systems",
+        icon: "Boxes",
+        description: "تطوير وبناء وحدات برمجية مخصصة لأنظمة إدارة الموارد للمؤسسات والمصانع الرقمية والغذائية، إدارة تتبع خطوط الإنتاج والعمليات، والربط مع قواعد البيانات المعقدة.",
+        features: [
+          "تطوير وحدات برمجية وأنظمة إدارة بـ .NET Framework",
+          "إدارة وتصميم وتكامل قواعد بيانات SQL المتقدمة",
+          "تتبع خطوط الإنتاج والعمليات للمصانع الرقمية",
+          "تحليل واختبار الأداء والربط التقني للأنظمة"
+        ]
+      },
+      {
+        id: "biz-dev-b2b",
+        title: "تطوير الأعمال الدولية والمبيعات (MENA & Africa)",
+        subtitle: "B2B Sales & International Relations",
+        badge: "Business Growth",
+        icon: "Globe",
+        description: "إدارة وتوجيه عمليات المبيعات B2B وتطوير الأعمال في منطقتي الشرق الأوسط وشمال أفريقيا (MENA) وأفريقيا، بناء علاقات استراتيجية وإجراء المفاوضات التجارية باللغتين العربية والتركية.",
+        features: [
+          "توسيع نطاق المبيعات والدخول لأسواق إقليمية جديدة",
+          "إجراء المراسلات التجارية والاجتماعات الدولية والتفاوض",
+          "تحليل احتياجات العملاء تقنياً وتجارياً وتقديم الحلول",
+          "إدارة العلاقات التجارية طويلة الأمد (Account Management)"
+        ]
+      },
+      {
+        id: "ecommerce-platforms",
+        title: "بناء المنصات والمتاجر الإلكترونية",
+        subtitle: "E-Commerce Solutions",
+        badge: "Digital Retail",
+        icon: "ShoppingBag",
+        description: "تطوير منصات متاجر إلكترونية متكاملة تتيح استعراض المنتجات، إدارة السلة والطلبات، ولوحات تحكم لإدارة المنتجات، المخزون، والعملاء بسلاسة وأمان.",
+        features: [
+          "تصميم وتطوير واجهات المتاجر الرقمية بأسلوب عصري",
+          "بناء لوحات تحكم (Admin Dashboards) لإدارة المنتجات والطلبات",
+          "تكامل نظم السلة والمدفوعات الإلكترونية",
+          "تحسين تجربة التسوق وزيادة معدل التحويل"
+        ]
+      },
+      {
+        id: "ai-speech",
+        title: "دمج حلول الذكاء الاصطناعي ومعالجة الصوت",
+        subtitle: "Speech Recognition & AI Tools",
+        badge: "AI & Innovation",
+        icon: "Cpu",
+        description: "تطوير وتكامل تطبيقات الذكاء الاصطناعي الخاصة بمعالجة الصوت وتحويله إلى نصوص (Speech-to-Text) باستخدام Python وبناء واجهات تفاعلية للتحكم والتحليل.",
+        features: [
+          "تطوير أدوات تحويل الصوت إلى نصوص (Speech-to-Text)",
+          "دمج خوارزميات معالجة الصوت والنصوص بـ Python",
+          "بناء لوحات تحكم وتكامل مع تطبيقات الويب (Laravel / React)",
+          "أتمتة العمليات البرمجية الذكية"
+        ]
+      },
+      {
+        id: "tech-consulting",
+        title: "الاستشارات التقنية وهندسة الحلول",
+        subtitle: "Technical Consulting & Architecture",
+        badge: "Consultations",
+        icon: "Lightbulb",
+        description: "تقديم استشارات تقنية وهندسية شاملة لمساعدة الشركات والشركات الناشئة في اختيار البنية التحتية المناسبة، تحسين الكود المصدري، وبناء حلول رقمية قابلة للتوسع.",
+        features: [
+          "تحليل متطلبات المشاريع واختيار التقنيات المناسبة",
+          "تخطيط معماري للأنظمة وتصميم قواعد البيانات",
+          "مراجعة الكود المصدري وتحسين كفاءة الأداء",
+          "تقديم حلول مخصصة تجمع بين الهندسة والعمل التجاري"
+        ]
+      }
     ]
   },
   tr: {
@@ -197,6 +301,7 @@ export const cvData = {
     },
     nav: {
       about: "Hakkımda",
+      services: "Hizmetlerim",
       experience: "İş Deneyimi",
       projects: "Projeler",
       education: "Eğitim ve Staj",
@@ -208,6 +313,8 @@ export const cvData = {
     sections: {
       aboutTitle: "HAKKIMDA",
       aboutSubtitle: "Yazılım Mühendisliği ve Uluslararası İş Geliştirme Sinerjisi",
+      servicesTitle: "HİZMETLERİM",
+      servicesSubtitle: "İşletmeniz ve projeleriniz için uçtan uca yazılım ve iş geliştirme çözümleri",
       experienceTitle: "İŞ DENEYİMİ",
       experienceSubtitle: "Profesyonel kariyer ve proje tecrübeleri",
       projectsTitle: "PROJELER VE UYGULAMALAR",
@@ -264,21 +371,35 @@ export const cvData = {
     ],
     projects: [
       {
-        id: "zto-fabrika",
-        title: "ZTO Fabrika",
-        category: "Gıda ERP & İzlenebilirlik Sistemi",
-        badge: "Enterprise ERP",
-        description: "Dijital gıda fabrikaları için izlenebilirlik, üretim süreçleri, stok yönetimi ve veri entegrasyonu sağlayan kurumsal ERP sistemi.",
-        website: "https://ztofabrika.com/tr",
-        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "System Integration"]
+        id: "zamir-website",
+        title: "Zamir Teknoloji Website",
+        subtitle: "İzlenebilirlik | Gıda ERP Sistemi | Dijital Fabrika | Dijital Dönüşüm",
+        category: "Zamir Teknoloji Kurumsal Web Sitesi",
+        badge: "Corporate Web",
+        image: "/projects/zamir-website.jpg",
+        description: "Zamir Teknoloji (ZTO Fabrika) firması için geliştirilen kurumsal web sitesi tasarımı; dijital dönüşüm, gıda ERP ve izlenebilirlik çözümlerini sergileyen modern web platformu.",
+        website: "https://ztofabrika.com/tr/",
+        technologies: ["React.js", "HTML5 & CSS3", "Responsive UI/UX", "Web Design", "JavaScript"]
       },
       {
-        id: "uzmanagel",
-        title: "Uzmanagel Platformu",
+        id: "zto-fabrika-erp",
+        title: "ZTO Fabrika ERP System",
+        subtitle: "Fabrika Yönetim ve İzlenebilirlik Sistemi",
+        category: "Fabrika Yönetim ve İzlenebilirlik Sistemi (ERP)",
+        badge: "Enterprise ERP",
+        image: "/projects/zto-erp.jpg",
+        description: "Dijital gıda fabrikaları için izlenebilirlik, üretim süreçleri, stok yönetimi, dijital dönüşüm ve Endüstri 4.0 veri entegrasyonu sağlayan kurumsal ERP sistemi.",
+        website: "https://zto-factory.com/",
+        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "Digital Transformation", "Industry 4.0"]
+      },
+      {
+        id: "khabiir",
+        title: "Khabiir Platformu",
         category: "Danışmanlık & Uzman Platformu",
         badge: "Web Platformu",
+        image: "/projects/khabiir.jpg",
         description: "Uzmanlar ve danışmanlar ile kullanıcıları bir araya getiren, randevu ve hizmet yönetimli modern web platformu.",
-        website: "",
+        website: "https://khabiir.com/",
         technologies: ["React.js", "Node.js", "REST APIs", "Full Stack", "JavaScript"]
       },
       {
@@ -286,6 +407,7 @@ export const cvData = {
         title: "Brand",
         category: "E-Ticaret Platformu",
         badge: "E-Ticaret",
+        image: "/projects/brand.jpg",
         description: "Brand markası ürünleri için geliştirilen, sepet yönetimi, ürün kataloğu ve sipariş takibi sunan modern e-ticaret çözümü.",
         website: "",
         technologies: ["React.js", "Node.js", "Firebase", "E-Commerce UI", "Responsive Design"]
@@ -358,6 +480,92 @@ export const cvData = {
     languages: [
       { name: "Arapça", level: "ANADİLİ", stars: 5, note: "Native Language" },
       { name: "Türkçe", level: "İleri Düzey / Profesyonel", stars: 5, note: "Professional Fluent" }
+    ],
+    services: [
+      {
+        id: "fullstack-dev",
+        title: "Uçtan Uca Web Geliştirme (Full Stack)",
+        subtitle: "React.js, Node.js & REST APIs",
+        badge: "Web Engineering",
+        icon: "Code2",
+        description: "Kullanıcı dostu, hızlı ve modern web uygulamalarının geliştirilmesi. React.js ile dinamik arayüzler ve Node.js & REST API ile güvenli, ölçeklenebilir arka plan servisleri.",
+        features: [
+          "React.js ile yüksek performanslı interaktif arayüzler",
+          "Node.js ve RESTful API mimarisi ve servisi geliştirme",
+          "Firebase ve SQL veritabanı entegrasyonları",
+          "Mobil uyumlu (Responsive UI/UX) tasarım ve optimizasyon"
+        ]
+      },
+      {
+        id: "erp-net",
+        title: "ERP Sistemleri & .NET Geliştirme",
+        subtitle: "Enterprise Resource Planning",
+        badge: "Enterprise Systems",
+        icon: "Boxes",
+        description: "Kurumsal ERP yazılımları ve fabrika yönetim sistemleri için .NET altyapısında özel modüller geliştirme, üretim hattı takibi ve SQL veritabanı entegrasyonu.",
+        features: [
+          ".NET Framework ile kurumsal yazılım modülleri geliştirme",
+          "SQL veritabanı tasarımı, veri yönetimi ve sorgu optimizasyonu",
+          "Dijital ve gıda fabrikaları için izlenebilirlik sistemleri",
+          "Sistem entegrasyonu ve performans analizleri"
+        ]
+      },
+      {
+        id: "biz-dev-b2b",
+        title: "Bölgesel İş Geliştirme & B2B Satış (MENA & Afrika)",
+        subtitle: "B2B Sales & International Relations",
+        badge: "Business Growth",
+        icon: "Globe",
+        description: "MENA ve Afrika bölgelerinde B2B satış yönetimi, uluslararası pazar araştırması, müşteri ilişkileri ve ticari müzakerelerin yürütülmesi.",
+        features: [
+          "Uluslararası pazarlara giriş ve yeni müşteri kazanımı",
+          "Ticari yazışmalar, uluslararası toplantılar ve müzakere yönetimi",
+          "Teknik ve ticari ihtiyaç analizi ile doğru çözüm sunumu",
+          "Uzun vadeli B2B müşteri ve ortaklık ilişkileri yönetimi"
+        ]
+      },
+      {
+        id: "ecommerce-platforms",
+        title: "E-Ticaret & Dijital Platform Çözümleri",
+        subtitle: "E-Commerce Solutions",
+        badge: "Digital Retail",
+        icon: "ShoppingBag",
+        description: "Ürün yönetimi, sepet sistemleri, sipariş takibi ve yönetim panellerini kapsayan modern ve güvenli e-ticaret platformlarının geliştirilmesi.",
+        features: [
+          "Özel e-ticaret arayüzü tasarımı ve ürün katalogları",
+          "Gelişmiş admin ve sipariş yönetim panelleri",
+          "Sepet ve ödeme sistemleri entegrasyonu",
+          "Kullanıcı deneyimi (UX) ve dönüşüm oranı optimizasyonu"
+        ]
+      },
+      {
+        id: "ai-speech",
+        title: "Yapay Zeka & Ses İşleme Çözümleri",
+        subtitle: "Speech Recognition & AI Tools",
+        badge: "AI & Innovation",
+        icon: "Cpu",
+        description: "Python ile ses tanıma ve sesten metne dönüştürme (Speech-to-Text) uygulamalarının geliştirilmesi ve web platformlarına entegrasyonu.",
+        features: [
+          "Python ile sesten metne (Speech-to-Text) dönüştürme araçları",
+          "Ses verisi işleme ve model entegrasyonları",
+          "Admin panelleri ve web uygulamaları ile entegrasyon (Laravel/React)",
+          "Akıllı süreç otomasyonları"
+        ]
+      },
+      {
+        id: "tech-consulting",
+        title: "Teknik Danışmanlık & Sistem Mimarisi",
+        subtitle: "Technical Consulting & Architecture",
+        badge: "Consultations",
+        icon: "Lightbulb",
+        description: "Şirketler ve girişimler için teknoloji seçimi, yazılım mimarisi, veritabanı tasarımı ve ölçeklenebilir dijital çözümler konusunda teknik danışmanlık.",
+        features: [
+          "Proje ihtiyaç analizi ve teknoloji yığını seçimi",
+          "Sistem mimarisi planlama ve veritabanı tasarımı",
+          "Kod incelemesi ve performans iyileştirme çalışmaları",
+          "Teknik ve ticari süreçlerin senkronizasyonu"
+        ]
+      }
     ]
   },
   en: {
@@ -378,6 +586,7 @@ export const cvData = {
     },
     nav: {
       about: "About",
+      services: "Services",
       experience: "Experience",
       projects: "Projects",
       education: "Education",
@@ -389,6 +598,8 @@ export const cvData = {
     sections: {
       aboutTitle: "About Me",
       aboutSubtitle: "Combining Software Engineering & International Business Growth",
+      servicesTitle: "My Services",
+      servicesSubtitle: "Comprehensive software engineering and international business solutions",
       experienceTitle: "Work Experience",
       experienceSubtitle: "Track record in Full Stack development and ERP business solutions",
       projectsTitle: "Featured Projects",
@@ -444,21 +655,36 @@ export const cvData = {
     ],
     projects: [
       {
-        id: "zto-fabrika",
-        title: "ZTO Fabrika",
-        category: "Food ERP & Traceability System",
-        badge: "Enterprise ERP",
-        description: "Enterprise ERP & traceability platform for digital food factories, optimizing production lines, stock management, and SQL database operations.",
-        website: "https://ztofabrika.com/tr",
-        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "System Integration"]
+        id: "zamir-website",
+        title: "Zamir Teknoloji Website",
+        subtitle: "Traceability | Food ERP System | Digital Factory | Digital Transformation",
+        category: "Zamir Teknoloji Corporate Website",
+        badge: "Corporate Web",
+        image: "/projects/zamir-website.jpg",
+        description: "Official corporate website design & development for Zamir Teknoloji (ZTO Fabrika), presenting digital transformation, food ERP, and industrial traceability solutions.",
+        website: "https://ztofabrika.com/tr/",
+        technologies: ["React.js", "HTML5 & CSS3", "Responsive UI/UX", "Web Design", "JavaScript"]
       },
       {
-        id: "uzmanagel",
-        title: "Uzmanagel Platform",
+        id: "zto-fabrika-erp",
+        title: "ZTO Fabrika ERP System",
+        subtitle: "Factory Management & Traceability System",
+        category: "Factory Management & Traceability ERP System",
+        badge: "Enterprise ERP",
+        image: "/projects/zto-erp.jpg",
+        image: "/projects/zto-erp.jpg",
+        description: "Enterprise ERP & traceability platform for digital food factories, enabling Industry 4.0 digital transformation, production tracking, and SQL database operations.",
+        website: "https://zto-factory.com/",
+        technologies: [".NET", "SQL", "ERP Architecture", "Traceability", "Digital Transformation", "Industry 4.0"]
+      },
+      {
+        id: "khabiir",
+        title: "Khabiir Platform",
         category: "Expert Consultation Platform",
         badge: "Web Platform",
+        image: "/projects/khabiir.jpg",
         description: "Modern web application facilitating seamless expert consultations, appointment scheduling, and admin panel management.",
-        website: "",
+        website: "https://khabiir.com/",
         technologies: ["React.js", "Node.js", "REST APIs", "Full Stack", "JavaScript"]
       },
       {
@@ -466,6 +692,7 @@ export const cvData = {
         title: "Brand",
         category: "E-Commerce Platform",
         badge: "E-Commerce",
+        image: "/projects/brand.jpg",
         description: "Full-featured e-commerce solution engineered for Brand, featuring product catalog, cart checkout, and admin management dashboard.",
         website: "",
         technologies: ["React.js", "Node.js", "Firebase", "E-Commerce UI", "Responsive Design"]
@@ -538,6 +765,92 @@ export const cvData = {
     languages: [
       { name: "Arabic", level: "Native / Mother Tongue", stars: 5, note: "Native Language" },
       { name: "Turkish", level: "Full Professional Proficiency", stars: 5, note: "Professional Fluent" }
+    ],
+    services: [
+      {
+        id: "fullstack-dev",
+        title: "Full Stack Web Development",
+        subtitle: "React.js, Node.js & REST APIs",
+        badge: "Web Engineering",
+        icon: "Code2",
+        description: "Designing and building modern, responsive, high-performance web applications featuring dynamic React.js frontends and scalable Node.js REST API backends.",
+        features: [
+          "Interactive & responsive frontend interfaces with React.js",
+          "Scalable backend architecture & RESTful APIs with Node.js",
+          "Database integration (Firebase & SQL Server)",
+          "Mobile-first responsive UI/UX design & performance tuning"
+        ]
+      },
+      {
+        id: "erp-net",
+        title: "Enterprise ERP & .NET Development",
+        subtitle: "Enterprise Resource Planning",
+        badge: "Enterprise Systems",
+        icon: "Boxes",
+        description: "Engineering tailored ERP system modules using .NET and SQL, implementing production line traceability for industrial and food manufacturing facilities.",
+        features: [
+          "Enterprise ERP module development with .NET Framework",
+          "Advanced SQL database architecture & query optimization",
+          "Manufacturing traceability & digital factory workflows",
+          "System integration & technical performance audits"
+        ]
+      },
+      {
+        id: "biz-dev-b2b",
+        title: "Regional Business Dev & B2B Sales (MENA & Africa)",
+        subtitle: "B2B Sales & International Relations",
+        badge: "Business Growth",
+        icon: "Globe",
+        description: "Driving B2B international sales, client acquisition, and cross-border commercial negotiation across the Middle East, North Africa (MENA), and Africa.",
+        features: [
+          "Market entry strategy & regional B2B client prospecting",
+          "International business correspondence & negotiation management",
+          "Technical & commercial requirement analysis for clients",
+          "Long-term B2B client relationship management (Account Mgmt)"
+        ]
+      },
+      {
+        id: "ecommerce-platforms",
+        title: "E-Commerce & Digital Platform Solutions",
+        subtitle: "E-Commerce Solutions",
+        badge: "Digital Retail",
+        icon: "ShoppingBag",
+        description: "Building end-to-end online store platforms featuring catalog displays, cart management, checkout workflows, and comprehensive admin control panels.",
+        features: [
+          "Modern retail frontend UI development",
+          "Robust administrative dashboards for product & order management",
+          "Seamless shopping cart & payment flow integration",
+          "Conversion-focused user experience optimization"
+        ]
+      },
+      {
+        id: "ai-speech",
+        title: "AI & Speech Recognition Integration",
+        subtitle: "Speech Recognition & AI Tools",
+        badge: "AI & Innovation",
+        icon: "Cpu",
+        description: "Developing specialized Python applications for speech-to-text processing and integrating artificial intelligence modules into web platforms.",
+        features: [
+          "Python speech-to-text processing engine development",
+          "Audio signal processing & machine learning integration",
+          "Web admin panel integration (Laravel & React.js)",
+          "Smart automated workflow implementation"
+        ]
+      },
+      {
+        id: "tech-consulting",
+        title: "Technical Consulting & System Architecture",
+        subtitle: "Technical Consulting & Architecture",
+        badge: "Consultations",
+        icon: "Lightbulb",
+        description: "Providing comprehensive engineering advisory for businesses and startups on technology stack selection, database design, and scalable system architecture.",
+        features: [
+          "Project requirement assessment & tech stack selection",
+          "Software architecture blueprinting & database schema design",
+          "Code review, security, and performance optimization",
+          "Bridging software engineering with business strategy"
+        ]
+      }
     ]
   }
 };
